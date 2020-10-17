@@ -42,16 +42,17 @@ public class LoginPanel extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-                if( mFirebaseUser != null ){
-                    Toast.makeText(com.example.system.LoginPanel.this,"You are logged in",Toast.LENGTH_SHORT).show();
-
+                if (mFirebaseUser != null && checkManager.isSelected()) {
+                    Toast.makeText(com.example.system.LoginPanel.this, "You are logged in", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(com.example.system.LoginPanel.this, Manager.class);
+                    startActivity(i);
                 }
-                else if( mFirebaseUser != null ){
-                    Toast.makeText(com.example.system.LoginPanel.this,"You are logged in",Toast.LENGTH_SHORT).show();
-
-                }
-                else{
-                    Toast.makeText(com.example.system.LoginPanel.this,"Please Login",Toast.LENGTH_SHORT).show();
+                if (mFirebaseUser != null && checkWorker.isSelected()) {
+                    Toast.makeText(com.example.system.LoginPanel.this, "You are logged in", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(com.example.system.LoginPanel.this, Worker.class);
+                    startActivity(i);
+                } else {
+                    Toast.makeText(com.example.system.LoginPanel.this, "Please Login", Toast.LENGTH_SHORT).show();
                 }
             }
         };
@@ -61,30 +62,49 @@ public class LoginPanel extends AppCompatActivity {
             public void onClick(View v) {
                 String email = emailId.getText().toString();
                 String pwd = password.getText().toString();
-                if(email.isEmpty()){
+                if (email.isEmpty()) {
                     emailId.setError("Please enter email id");
                     emailId.requestFocus();
-                }
-                else  if(pwd.isEmpty()){
+                } else if (pwd.isEmpty()) {
                     password.setError("Please enter your password");
                     password.requestFocus();
-                }
-                else  if(email.isEmpty() && pwd.isEmpty()){
-                    Toast.makeText(LoginPanel.this,"Fields Are Empty!",Toast.LENGTH_SHORT).show();
-                }
-                else  if(!(email.isEmpty() && pwd.isEmpty())){
+                } else if (email.isEmpty() && pwd.isEmpty()) {
+                    Toast.makeText(LoginPanel.this, "Fields Are Empty!", Toast.LENGTH_SHORT).show();
+                } else if (!(email.isEmpty() && pwd.isEmpty())) {
                     mFirebaseAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(LoginPanel.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(!task.isSuccessful()){
-                                Toast.makeText(LoginPanel.this,"Login Error, Please Login Again",Toast.LENGTH_SHORT).show();
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(LoginPanel.this, "Login Error, Please Login Again", Toast.LENGTH_SHORT).show();
                             }
-                            else{
+                           /* else if(checkWorker.isSelected()){
+                                Intent goWorker = new Intent (LoginPanel.this,Worker.class);
+                                startActivity(goWorker);
+                            }*/
+                            else {
+                               /* checkWorker.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {*/
+                                if (checkWorker.isChecked()) {
+                                    Intent goWorker = new Intent(LoginPanel.this, Worker.class);
+                                    startActivity(goWorker);
+                                }
 
+                                if (checkManager.isChecked()) {
+                                    Intent goManager = new Intent(LoginPanel.this, Manager.class);
+                                    startActivity(goManager);
+                                }
                             }
+                            /*});*/
+
+                                /*checkManager.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {*/
+
                         }
                     });
                 }
+
                 else{
                     Toast.makeText(LoginPanel.this,"Error Occurred!",Toast.LENGTH_SHORT).show();
                 }
