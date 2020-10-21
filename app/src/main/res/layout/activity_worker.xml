@@ -36,69 +36,105 @@
         </RelativeLayout>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="373dp"
+            android:layout_width="375dp"
+            android:layout_height="375dp"
             android:layout_margin="20dp"
             android:background="@drawable/radius"
             android:radius="20dp"
-            app:cardCornerRadius="300dp"
+            app:cardCornerRadius="30dp"
             app:cardElevation="6dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="400dp"
+                android:layout_height="522dp">
 
                 <EditText
                     android:id="@+id/editTextTextPersonName3"
                     android:layout_width="157dp"
                     android:layout_height="44dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="31dp"
                     android:ems="10"
+                    android:gravity="center"
                     android:inputType="textPersonName"
-                    android:text="Name"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="31dp" />
+                    android:text="Produkt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="131dp"
                     android:layout_height="48dp"
-                    android:text="Button"
-                    tools:layout_editor_absoluteX="216dp"
-                    tools:layout_editor_absoluteY="28dp" />
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="53dp"
+                    android:layout_marginRight="53dp"
+                    android:background="@drawable/button"
+                    android:text="Dodaj produkt"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
                     android:id="@+id/editTextTextPersonName"
                     android:layout_width="157dp"
                     android:layout_height="46dp"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginTop="24dp"
                     android:ems="10"
+                    android:gravity="center"
                     android:inputType="textPersonName"
-                    android:text="Name"
-                    tools:layout_editor_absoluteX="19dp"
-                    tools:layout_editor_absoluteY="99dp" />
+                    android:text=""
+                    app:layout_constraintEnd_toStartOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="130dp"
                     android:layout_height="44dp"
+                    android:layout_marginStart="41dp"
+                    android:layout_marginLeft="41dp"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginEnd="53dp"
+                    android:layout_marginRight="53dp"
+                    android:gravity="center"
                     android:text="ILOŚĆ"
-                    tools:layout_editor_absoluteX="219dp"
-                    tools:layout_editor_absoluteY="101dp" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
+                    app:layout_constraintTop_toBottomOf="@+id/button4" />
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="333dp"
                     android:layout_height="50dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginEnd="49dp"
+                    android:layout_marginRight="49dp"
+                    android:layout_marginBottom="66dp"
+                    android:gravity="center"
                     android:text="GODZINA"
-                    tools:layout_editor_absoluteX="18dp"
-                    tools:layout_editor_absoluteY="171dp" />
+                    app:layout_constraintBottom_toTopOf="@+id/button3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="164dp"
                     android:layout_height="47dp"
+                    android:layout_marginStart="101dp"
+                    android:layout_marginLeft="101dp"
+                    android:layout_marginEnd="135dp"
+                    android:layout_marginRight="135dp"
+                    android:layout_marginBottom="188dp"
+                    android:background="@drawable/button"
                     android:text="ZATWIERDZ"
-                    tools:layout_editor_absoluteX="103dp"
-                    tools:layout_editor_absoluteY="287dp" />
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
@@ -106,7 +142,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="@color/button">
+            android:background="@color/blue_c">
 
             <EditText
                 android:id="@+id/editTextTextPersonName4"
@@ -119,6 +155,7 @@
                 android:layout_margin="10dp"
                 android:text="Wiadomość"
                 android:textAlignment="center"
+                android:background="@drawable/radius"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -128,9 +165,17 @@
                 android:id="@+id/button5"
                 android:layout_width="153dp"
                 android:layout_height="45dp"
+                android:layout_marginStart="129dp"
+                android:layout_marginLeft="129dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="129dp"
+                android:layout_marginRight="129dp"
+                android:background="@drawable/button"
                 android:text="WYŚLIJ"
-                tools:layout_editor_absoluteX="129dp"
-                tools:layout_editor_absoluteY="248dp" />
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
