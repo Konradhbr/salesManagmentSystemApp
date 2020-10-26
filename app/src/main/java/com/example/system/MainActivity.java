@@ -9,13 +9,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        login(R.layout.activity_login_panel);
+        login(R.layout.activity_worker);
         super.onCreate(savedInstanceState);
 
     }
 
     public void login(int v) {
-        Intent login = new Intent(com.example.system.MainActivity.this, LoginPanel.class);
+        Intent login = new Intent(com.example.system.MainActivity.this, Worker.class);
         startActivity(login);
     }
 }
