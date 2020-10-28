@@ -51,7 +51,8 @@ public class Worker extends AppCompatActivity {
         reffSoldProduct = FirebaseDatabase.getInstance().getReference().child("Sold Product");
         reffMessage = FirebaseDatabase.getInstance().getReference().child("Messages");
 
-        String date_n = new SimpleDateFormat("HH:mm - MMM dd, yyyy", Locale.getDefault()).format(new Date());
+
+        final String date_n = new SimpleDateFormat("HH:mm:ss - MMM dd, yyyy", Locale.getDefault()).format(new Date());
         currentTime.setText(date_n);
 
         addProductBTN.setOnClickListener(new View.OnClickListener() {
@@ -65,10 +66,7 @@ public class Worker extends AppCompatActivity {
         String product = getIntent().getStringExtra("valueFromList");
         showProduct.setText(product);
 
-        /*if(!amount.getText().toString().matches("")) {
-            productAmount = Integer.parseInt(amount.getText().toString());
-            Toast.makeText(Worker.this , productAmount , Toast.LENGTH_LONG).show();
-        }*/
+
 
 
         saveProduct.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +86,9 @@ public class Worker extends AppCompatActivity {
             public void onClick(View v) {
                 message = messageField.getText().toString().trim();
                 sendMessage.setMessage(message);
-                reffMessage.child("Message").setValue(sendMessage);
+                String date_n = new SimpleDateFormat("HH:mm:ss - MMM dd, yyyy", Locale.getDefault()).format(new Date());
+                currentTime.setText(date_n);
+                reffMessage.child(date_n).setValue(sendMessage);
                 Toast.makeText(Worker.this , "Wysłano wiadomość" , Toast.LENGTH_LONG).show();
             }
         });
