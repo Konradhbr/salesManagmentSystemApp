@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Charts"></activity>
+        <activity android:name=".SellingTimeChart"></activity>
+        <activity android:name=".Charts" />
         <activity android:name=".MessagesList" />
         <activity android:name=".ProductList" />
         <activity android:name=".Worker" />

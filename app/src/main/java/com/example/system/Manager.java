@@ -16,7 +16,7 @@ public class Manager extends AppCompatActivity {
         setContentView(R.layout.activity_manager);
 
         messageBTN = findViewById(R.id.message);
-        dataBTN = findViewById(R.id.charts);
+        dataBTN = findViewById(R.id.chart1);
 
 
         messageBTN.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +30,7 @@ public class Manager extends AppCompatActivity {
         dataBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent data = new Intent(com.example.system.Manager.this, Charts.class);
+                Intent data = new Intent(com.example.system.Manager.this, SellingTimeChart.class);
                 startActivity(data);
             }
         });

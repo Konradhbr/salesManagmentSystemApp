@@ -38,17 +38,6 @@ public class MessagesList extends AppCompatActivity {
 
         listView.setAdapter(arrayAdapter);
 
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MessagesList.this,"clicked item:"+i+" "+arrayList.get(i).toString(),Toast.LENGTH_SHORT).show();
-                item = arrayList.get(i).toString();
-                Intent intent = new Intent(MessagesList.this , Worker.class);
-                intent.putExtra("valueFromList" , item);
-                startActivity(intent);
-                finish();
-            }
-        });*/
         mreff = FirebaseDatabase.getInstance().getReference().child("Messages");
         mreff.addValueEventListener(new ValueEventListener() {
             @Override
