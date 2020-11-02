@@ -56,9 +56,24 @@
             android:layout_marginEnd="63dp"
             android:layout_marginRight="63dp"
             android:background="@drawable/purple_button"
-            android:text="Sprzedaż "
+            android:text="Sprzedaż w ciągu dnia  "
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+        <Button
+            android:id="@+id/chart2"
+            android:layout_width="284dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="156dp"
+            android:layout_marginEnd="63dp"
+            android:background="@drawable/purple_button"
+            android:text="Sprzedane produkty"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
@@ -71,6 +86,22 @@
             android:layout_marginBottom="144dp"
             android:background="@drawable/purple_button"
             android:text="Wiadomości"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/magazine"
+            android:layout_width="284dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="62dp"
+            android:layout_marginEnd="63dp"
+            android:layout_marginBottom="256dp"
+            android:background="@drawable/purple_button"
+            android:text="Magazyn"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

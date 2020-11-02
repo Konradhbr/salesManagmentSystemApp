@@ -94,8 +94,21 @@
                       app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintTop_toBottomOf="@+id/showProduct" />
 
+                  <EditText
+                      android:id="@+id/price"
+                      android:layout_width="157dp"
+                      android:layout_height="46dp"
+                      android:layout_marginStart="16dp"
+                      android:layout_marginTop="33dp"
+                      android:ems="10"
+                      android:gravity="center"
+                      android:inputType="number"
+                      android:text=""
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/amount" />
+
                   <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/amountTextView"
                     android:layout_width="130dp"
                     android:layout_height="44dp"
                     android:layout_marginTop="28dp"
@@ -107,14 +120,23 @@
                     app:layout_constraintTop_toBottomOf="@+id/addProduct" />
 
                   <TextView
+                      android:id="@+id/priceTextView"
+                      android:layout_width="130dp"
+                      android:layout_height="44dp"
+                      android:layout_marginTop="35dp"
+                      android:layout_marginEnd="36dp"
+                      android:gravity="center"
+                      android:text="CENA"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/amountTextView" />
+
+                  <TextView
                       android:id="@+id/time"
                       android:layout_width="333dp"
                       android:layout_height="50dp"
                       android:layout_marginStart="18dp"
-                      android:layout_marginLeft="18dp"
-                      android:layout_marginTop="188dp"
+                      android:layout_marginTop="252dp"
                       android:layout_marginEnd="49dp"
-                      android:layout_marginRight="49dp"
                       android:layout_marginBottom="10dp"
                       android:gravity="center"
                       android:text="@string/godzina"
@@ -129,10 +151,8 @@
                       android:layout_width="164dp"
                       android:layout_height="47dp"
                       android:layout_marginStart="101dp"
-                      android:layout_marginLeft="101dp"
                       android:layout_marginEnd="135dp"
-                      android:layout_marginRight="135dp"
-                      android:layout_marginBottom="188dp"
+                      android:layout_marginBottom="148dp"
                       android:background="@drawable/blue_button"
                       android:text="ZATWIERDZ"
                       android:textColor="@color/white"

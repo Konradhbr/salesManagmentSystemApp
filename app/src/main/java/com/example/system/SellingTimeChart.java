@@ -49,7 +49,7 @@ public class SellingTimeChart extends AppCompatActivity {
 
                 pie.data(data);
 
-                AnyChartView anyChartView = (AnyChartView) findViewById(R.id.any_chart_view);
+                AnyChartView anyChartView = (AnyChartView) findViewById(R.id.chart1);
                 anyChartView.setChart(pie);
 
             }

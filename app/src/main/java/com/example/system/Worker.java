@@ -28,8 +28,8 @@ public class Worker extends AppCompatActivity {
 
     Button addProductBTN , sendMessageBTN , saveProduct;
     TextView showProduct , currentTime;
-    EditText amount, messageField;
-    int productAmount;
+    EditText amount, messageField, price;
+    int productAmount, productPrice , inStock;
     String message;
     DatabaseReference reffSoldProduct, reffMessage;
     SoldProduct soldProduct = new SoldProduct();
@@ -45,6 +45,7 @@ public class Worker extends AppCompatActivity {
         showProduct = findViewById(R.id.showProduct);
         currentTime = findViewById(R.id.time);
         amount = findViewById(R.id.amount);
+        price = findViewById(R.id.price);
         sendMessageBTN = findViewById(R.id.messageBTN);
         saveProduct = findViewById(R.id.send);
         messageField = findViewById(R.id.message);
@@ -73,9 +74,15 @@ public class Worker extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 productAmount = Integer.parseInt(amount.getText().toString().trim());
+                productPrice = Integer.parseInt(price.getText().toString().trim());
+                inStock = 30;
+
                 soldProduct.setProductName(showProduct.getText().toString().trim());
                 soldProduct.setProductAmount(productAmount);
+                soldProduct.setProductPrice(productPrice);
+                soldProduct.setInStock(inStock);
                 soldProduct.setDate(currentTime.getText().toString().trim());
+
                 reffSoldProduct.child(soldProduct.getProductName()).setValue(soldProduct);
                 Toast.makeText(Worker.this , "Dodano produkt" , Toast.LENGTH_LONG).show();
             }
@@ -85,7 +92,9 @@ public class Worker extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 message = messageField.getText().toString().trim();
+
                 sendMessage.setMessage(message);
+
                 String date_n = new SimpleDateFormat("HH:mm:ss - MMM dd, yyyy", Locale.getDefault()).format(new Date());
                 currentTime.setText(date_n);
                 reffMessage.child(date_n).setValue(sendMessage);

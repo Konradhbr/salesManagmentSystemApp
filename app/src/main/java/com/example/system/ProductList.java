@@ -25,28 +25,17 @@ public class ProductList extends AppCompatActivity {
         ListView listView=(ListView)findViewById(R.id.listview);
         final ArrayList<String> arrayList=new ArrayList<>();
 
-        arrayList.add("android");
-        arrayList.add("is");
-        arrayList.add("great");
-        arrayList.add("and I love it");
-        arrayList.add("It");
-        arrayList.add("is");
-        arrayList.add("better");
-        arrayList.add("then");
-        arrayList.add("many");
-        arrayList.add("other");
-        arrayList.add("operating system.");
-        arrayList.add("android");
-        arrayList.add("is");
-        arrayList.add("great");
-        arrayList.add("and I love it");
-        arrayList.add("It");
-        arrayList.add("is");
-        arrayList.add("better");
-        arrayList.add("then");
-        arrayList.add("many");
-        arrayList.add("other");
-        arrayList.add("operating system.");
+        arrayList.add("wiertarka");
+        arrayList.add("wkrętarka");
+        arrayList.add("piła");
+        arrayList.add("wyrzynarka");
+        arrayList.add("pilarka ukosowa");
+        arrayList.add("wiertarka udarowa");
+        arrayList.add("wkrętarka udarowa");
+        arrayList.add("pilarka wielofunkcyjna");
+        arrayList.add("szlifierka kątowa");
+        arrayList.add("przekładnia kątowa");
+
 
         ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,arrayList);
 

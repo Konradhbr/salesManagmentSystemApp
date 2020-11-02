@@ -2,7 +2,7 @@ package com.example.system;
 
 public class SoldProduct {
     private String productName , date ;
-    private int productAmount;
+    private int productAmount, productPrice , inStock;
 
     public SoldProduct() {
     }
@@ -31,4 +31,19 @@ public class SoldProduct {
         this.productAmount = productAmount;
     }
 
+    public int getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public int getInStock() {
+        return inStock;
+    }
+
+    public void setInStock(int inStock) {
+        this.inStock = inStock;
+    }
 }
