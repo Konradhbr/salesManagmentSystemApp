@@ -77,14 +77,8 @@ public class LoginPanel extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(LoginPanel.this, "Login Error, Please Login Again", Toast.LENGTH_SHORT).show();
                             }
-                           /* else if(checkWorker.isSelected()){
-                                Intent goWorker = new Intent (LoginPanel.this,Worker.class);
-                                startActivity(goWorker);
-                            }*/
                             else {
-                               /* checkWorker.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {*/
+
                                 if (checkWorker.isChecked()) {
                                     Intent goWorker = new Intent(LoginPanel.this, Worker.class);
                                     startActivity(goWorker);
@@ -95,12 +89,6 @@ public class LoginPanel extends AppCompatActivity {
                                     startActivity(goManager);
                                 }
                             }
-                            /*});*/
-
-                                /*checkManager.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {*/
-
                         }
                     });
                 }

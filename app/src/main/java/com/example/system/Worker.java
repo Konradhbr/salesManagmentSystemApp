@@ -29,7 +29,7 @@ public class Worker extends AppCompatActivity {
     Button addProductBTN , sendMessageBTN , saveProduct;
     TextView showProduct , currentTime;
     EditText amount, messageField, price;
-    int productAmount, productPrice , inStock;
+    int soldAmount, productPrice , inStock;
     String message;
     DatabaseReference reffSoldProduct, reffMessage;
     SoldProduct soldProduct = new SoldProduct();
@@ -73,12 +73,11 @@ public class Worker extends AppCompatActivity {
         saveProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                productAmount = Integer.parseInt(amount.getText().toString().trim());
+                soldAmount = Integer.parseInt(amount.getText().toString().trim());
                 productPrice = Integer.parseInt(price.getText().toString().trim());
                 inStock = 30;
-
                 soldProduct.setProductName(showProduct.getText().toString().trim());
-                soldProduct.setProductAmount(productAmount);
+                soldProduct.setSoldAmount(soldAmount);
                 soldProduct.setProductPrice(productPrice);
                 soldProduct.setInStock(inStock);
                 soldProduct.setDate(currentTime.getText().toString().trim());

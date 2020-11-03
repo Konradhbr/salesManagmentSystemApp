@@ -55,39 +55,6 @@ public class MessagesList extends AppCompatActivity {
                 }
             
         });
-        /*mreff.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                for (DataSnapshot snapshot1 : snapshot.getChildren()){
-                    String value = String.valueOf(snapshot1.child("message").getValue());
-                    arrayList.add(value);
-                    arrayAdapter.notifyDataSetChanged();
-                }
-                *//*String value = snapshot.getValue(String.class);
-                arrayList.add(value);
-                arrayAdapter.notifyDataSetChanged();*//*
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
 
     }
 }

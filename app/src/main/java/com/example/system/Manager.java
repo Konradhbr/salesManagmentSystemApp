@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Manager extends AppCompatActivity {
-    Button messageBTN ,chart1BTN , chart2BTN;
+    Button messageBTN ,chart1BTN , chart2BTN , chart3BTN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class Manager extends AppCompatActivity {
         messageBTN = findViewById(R.id.message);
         chart1BTN = findViewById(R.id.chart1);
         chart2BTN = findViewById(R.id.chart2);
+        chart3BTN = findViewById(R.id.chart3);
 
         messageBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,14 @@ public class Manager extends AppCompatActivity {
             public void onClick(View v) {
                 Intent chart2 = new Intent(com.example.system.Manager.this, SoldProductsChart.class);
                 startActivity(chart2);
+            }
+        });
+
+        chart3BTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent chart3 = new Intent(com.example.system.Manager.this, InStockChart.class);
+                startActivity(chart3);
             }
         });
     };

@@ -6,16 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import com.anychart.AnyChart;
-import com.anychart.AnyChartView;
-import com.anychart.chart.common.dataentry.DataEntry;
-import com.anychart.chart.common.dataentry.ValueDataEntry;
-import com.anychart.charts.Radar;
-import com.anychart.core.radar.series.Line;
-import com.anychart.data.Mapping;
-import com.anychart.data.Set;
-import com.anychart.enums.Align;
-import com.anychart.enums.MarkerType;
+
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -47,14 +38,17 @@ public class SoldProductsChart extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 BarChart barChart = findViewById(R.id.chart2);
                 ArrayList<BarEntry> staff = new ArrayList<>();
-                int amountOfProduct = 0;
-
+                int cena = 0;
+                int countValue ,countMultiplier;
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-                        String value = String.valueOf(snapshot1.child("productAmount").getValue());
-                        amountOfProduct += Integer.parseInt(value);
+                    String value = String.valueOf(snapshot1.child("productPrice").getValue());
+                    String multiplier = String.valueOf(snapshot1.child("soldAmount").getValue());
+                    countValue = Integer.parseInt(value);
+                    countMultiplier = Integer.parseInt(multiplier);
+                    cena += countValue * countMultiplier;
                 }
-                staff.add(new BarEntry(1, amountOfProduct));
-                staff.add(new BarEntry(2, 50));
+                staff.add(new BarEntry(1, cena));
+                staff.add(new BarEntry(2, 1000));
 
                 BarDataSet barDataSet = new BarDataSet(staff, "Sprzedane elektronarzędzia , Cel miesiąca");
                 barDataSet.setColors(ColorTemplate.PASTEL_COLORS);
