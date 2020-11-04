@@ -48,12 +48,12 @@ public class SoldProductsChart extends AppCompatActivity {
                     cena += countValue * countMultiplier;
                 }
                 staff.add(new BarEntry(1, cena));
-                staff.add(new BarEntry(2, 1000));
+                staff.add(new BarEntry(2, 12000));
 
                 BarDataSet barDataSet = new BarDataSet(staff, "Sprzedane elektronarzędzia , Cel miesiąca");
                 barDataSet.setColors(ColorTemplate.PASTEL_COLORS);
                 barDataSet.setValueTextColor(Color.BLACK);
-                barDataSet.setValueTextSize(15f);
+                barDataSet.setValueTextSize(20f);
 
                 BarData barData = new BarData(barDataSet);
 
@@ -61,6 +61,8 @@ public class SoldProductsChart extends AppCompatActivity {
                 barChart.setData(barData);
                 barChart.getDescription().setText("Ilość sprzedanych elektronarzędzi");
                 barChart.animateY(5);
+                barChart.animateXY(3000, 3000);
+
             }
                 @Override
                 public void onCancelled (@NonNull DatabaseError databaseError){

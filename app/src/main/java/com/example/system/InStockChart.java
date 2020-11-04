@@ -50,14 +50,14 @@ public class InStockChart extends AppCompatActivity {
         BarData barData = new BarData(barDataSet);
         XAxis xAxis = horizontalChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        final String[] months = new String[]{"wiertarka", "wkrętarka", "piła", "szlifierka kątowa"};
+        final String[] months = new String[]{"wiertarka", "wkrętarka", "piła", "szlifierka kątowa" , "wiertarka udarowa"};
         IndexAxisValueFormatter formatter = new IndexAxisValueFormatter(months);
         xAxis.setGranularity(1f);
         xAxis.setValueFormatter(formatter);
         horizontalChart.setData(barData);
         horizontalChart.setFitBars(true);
         horizontalChart.getDescription().setText("Stan magazynu");
-        horizontalChart.animateXY(5000, 5000);
+        horizontalChart.animateXY(4000, 4000);
         horizontalChart.invalidate();
     }
 
@@ -67,6 +67,7 @@ public class InStockChart extends AppCompatActivity {
         entries.add(new BarEntry(1f, 15f));
         entries.add(new BarEntry(2f, 5f));
         entries.add(new BarEntry(3f, 10f));
+        entries.add(new BarEntry(4f, 28f));
         return entries;
     }
 }

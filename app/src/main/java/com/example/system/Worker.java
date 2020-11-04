@@ -26,7 +26,7 @@ import static java.lang.Integer.parseInt;
 
 public class Worker extends AppCompatActivity {
 
-    Button addProductBTN , sendMessageBTN , saveProduct;
+    Button addProductBTN , sendMessageBTN , saveProduct , logoutBTN;
     TextView showProduct , currentTime;
     EditText amount, messageField, price;
     int soldAmount, productPrice , inStock;
@@ -47,6 +47,7 @@ public class Worker extends AppCompatActivity {
         amount = findViewById(R.id.amount);
         price = findViewById(R.id.price);
         sendMessageBTN = findViewById(R.id.messageBTN);
+        logoutBTN = findViewById(R.id.logout);
         saveProduct = findViewById(R.id.send);
         messageField = findViewById(R.id.message);
         reffSoldProduct = FirebaseDatabase.getInstance().getReference().child("Sold Product");
@@ -98,6 +99,14 @@ public class Worker extends AppCompatActivity {
                 currentTime.setText(date_n);
                 reffMessage.child(date_n).setValue(sendMessage);
                 Toast.makeText(Worker.this , "Wysłano wiadomość" , Toast.LENGTH_LONG).show();
+            }
+        });
+
+        logoutBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(com.example.system.Worker.this, LoginPanel.class);
+                startActivity(i);
             }
         });
 

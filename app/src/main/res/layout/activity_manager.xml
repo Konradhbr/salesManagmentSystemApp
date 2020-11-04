@@ -7,8 +7,8 @@
     tools:context=".Manager">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/purplegradient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="PANEL MENADŻERA"
+                android:text="PANEL MENEDŻERA"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
 
@@ -50,15 +50,14 @@
             android:id="@+id/chart1"
             android:layout_width="284dp"
             android:layout_height="72dp"
-            android:layout_marginStart="62dp"
-            android:layout_marginLeft="62dp"
-            android:layout_marginTop="39dp"
-            android:layout_marginEnd="63dp"
-            android:layout_marginRight="63dp"
+            android:layout_marginStart="61dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="64dp"
             android:background="@drawable/purple_button"
             android:text="Sprzedaż w ciągu dnia  "
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
@@ -82,10 +81,26 @@
             android:layout_width="284dp"
             android:layout_height="72dp"
             android:layout_marginStart="62dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="63dp"
-            android:layout_marginBottom="144dp"
             android:background="@drawable/purple_button"
             android:text="Wiadomości"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chart3"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="284dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="62dp"
+            android:layout_marginEnd="63dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/purple_button"
+            android:text="Wyloguj"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,15 +113,15 @@
             android:layout_width="284dp"
             android:layout_height="72dp"
             android:layout_marginStart="62dp"
+            android:layout_marginTop="46dp"
             android:layout_marginEnd="63dp"
-            android:layout_marginBottom="256dp"
             android:background="@drawable/purple_button"
             android:text="Magazyn"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chart2"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
